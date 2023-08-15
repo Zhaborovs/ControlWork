@@ -15,4 +15,13 @@
 
 
 
-Console.WriteLine("Hello, World!");
+
+Console.WriteLine("Введите слова через пробел и нажмите Enter");
+string number = Console.ReadLine();
+
+string[] array = number.Split(' ');
+
+for (int i = 0; i < array.Length; i++)
+{
+    Console.WriteLine($"{array[i]}");
+}
