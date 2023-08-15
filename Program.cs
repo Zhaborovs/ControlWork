@@ -19,9 +19,41 @@
 Console.WriteLine("Введите слова через пробел и нажмите Enter");
 string number = Console.ReadLine();
 
-string[] array = number.Split(' ');
+string[] arrayq = StringArrayToArray(number.Split(' '),3);
 
-for (int i = 0; i < array.Length; i++)
+for (int i = 0; i < arrayq.Length; i++)
 {
-    Console.WriteLine($"{array[i]}");
+    Console.WriteLine(arrayq[i]);
+}
+
+
+string[] StringArrayToArray(string[] array, int maxLength = 3)
+{
+    int nyArrLength = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= maxLength)
+        {
+            nyArrLength++;
+        }
+    }
+
+    string[] nyStringArray = new string[nyArrLength];
+    if (nyArrLength == 0)
+    {
+        nyStringArray[0] = $"no shorter than {maxLength} characters found";
+        return nyStringArray;
+    }
+
+    int j = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= maxLength)
+        {
+            nyStringArray[j] = array[i];
+            j++;
+        }
+    }
+    return nyStringArray;
 }
