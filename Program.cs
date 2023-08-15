@@ -1,8 +1,8 @@
 ﻿/* 
 Написать программу, которая из имеющегося массива
  строк формирует новый массив из строк,
-длина которых меньше, либо равна 3 символам.
-Первоначальный массив можно ввести с клавиатуры,
+длина которых меньше, либо равна 3 символам.           +
+Первоначальный массив можно ввести с клавиатуры,       +
 либо задать на старте выполнения алгоритма.
 При решении не рекомендуется пользоваться коллекциями,
 лучше обойтись исключительно массивами.
@@ -19,13 +19,20 @@
 Console.WriteLine("Введите слова через пробел и нажмите Enter");
 string number = Console.ReadLine();
 
-string[] arrayq = StringArrayToArray(number.Split(' '),3);
+string[] array1 = number.Split(' ');
 
-for (int i = 0; i < arrayq.Length; i++)
+PrintArrayString(array1);
+
+string[] array2 =StringArrayToArray(array1,3);
+PrintArrayString(array2);
+
+void PrintArrayString(string[] arr)
 {
-    Console.WriteLine(arrayq[i]);
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.WriteLine(arr[i]);
+    }
 }
-
 
 string[] StringArrayToArray(string[] array, int maxLength = 3)
 {
