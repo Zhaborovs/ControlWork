@@ -16,24 +16,21 @@
 
 
 
-Console.WriteLine("Введите слова через пробел и нажмите Enter");
+Console.WriteLine("введите массив строк через пробел и нажмите Enter");
 string number = Console.ReadLine();
-
-string[] array1 = number.Split(' ');
-
-PrintArrayString(array1);
-
-string[] array2 =StringArrayToArray(array1,3);
+string[] array2 = StringArrayToArray(number.Split(' '), 3);
+Console.WriteLine("------------->");
 PrintArrayString(array2);
-
+//вывод массива строк в кансоль
 void PrintArrayString(string[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.WriteLine(arr[i]);
+        Console.Write($"{arr[i]} ");
     }
+    Console.WriteLine();
 }
-
+//создание нового массива из старого по ограничению в длине символов (3)
 string[] StringArrayToArray(string[] array, int maxLength = 3)
 {
     int nyArrLength = 0;
@@ -48,7 +45,6 @@ string[] StringArrayToArray(string[] array, int maxLength = 3)
     string[] nyStringArray = new string[nyArrLength];
     if (nyArrLength == 0)
     {
-        nyStringArray[0] = $"no shorter than {maxLength} characters found";
         return nyStringArray;
     }
 
