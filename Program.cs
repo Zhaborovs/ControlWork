@@ -17,8 +17,8 @@
 
 
 Console.WriteLine("введите массив строк через пробел и нажмите Enter");
-string number = Console.ReadLine();
-string[] array2 = StringArrayToArray(number.Split(' '), 3);
+string string0 = Console.ReadLine();
+string[] array2 = StringArrayToArray(string0.Split(' '));
 Console.WriteLine("------------->");
 PrintArrayString(array2);
 //вывод массива строк в кансоль
